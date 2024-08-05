@@ -1,0 +1,28 @@
+{
+  "name": "stock-news-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "client": "cd frontend && npm start",
+    "dev:server": "nodemon backend/index.js",
+    "dev:client": "npm start --prefix frontend"
+  },
+  "dependencies": {
+    "axios": "^1.7.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7"
+  },
+  "options": {
+    "allowedHosts": ["localhost", ".localhost"],
+    "proxy": "https://localhost:3386/"
+  }
+}
